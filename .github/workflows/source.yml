@@ -11,10 +11,10 @@ jobs:
     steps:
     - name: test
       shell: bash
-      run: echo "${{ github.event_name }}"
+      run: echo "${{ github.event_name }} ${{ github.ref }}"
     - uses: lewagon/wait-on-check-action@v1.0.0
       with:
-        ref: ${{ github.ref }}
+        ref:
         check-name: 'Target'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         wait-interval: 10
